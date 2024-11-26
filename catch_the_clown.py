@@ -13,7 +13,7 @@ display_surface = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Catch the Clown')
 
 # Set FPS and clock
-FPS = 120
+FPS = 60
 clock = pygame.time.Clock()
 
 # Set game values
@@ -58,10 +58,11 @@ continue_text_rect.center = (WIDTH // 2, HEIGHT // 2 + 64)
 
 # Set sound and music
 click_sound = pygame.mixer.Sound('assets/click_sound.wav')
-click_sound.set_volume(.1)
+click_sound.set_volume(.02)
 miss_sound = pygame.mixer.Sound('assets/miss_sound.wav')
-miss_sound.set_volume(.1)
+miss_sound.set_volume(.02)
 pygame.mixer.music.load('assets/ctc_background_music.wav')
+pygame.mixer.music.set_volume(.05)
 
 # set images
 background_image = pygame.image.load('assets/background.png')
