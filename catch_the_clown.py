@@ -1,5 +1,4 @@
 import random
-
 import pygame
 
 
@@ -34,6 +33,7 @@ YELLOW = (248, 231, 28)
 
 # Set fonts
 font = pygame.font.Font('assets/Franxurter.ttf', 32)
+font2 = pygame.font.Font('assets/Franxurter.ttf', 22)
 
 # Set text
 title_text = font.render('Catch the Clown', True, BLUE)
@@ -55,6 +55,10 @@ game_over_text_rect.center = (WIDTH // 2, HEIGHT // 2)
 continue_text = font.render('Click anywhere to play again', True, YELLOW, BLUE)
 continue_text_rect = continue_text.get_rect()
 continue_text_rect.center = (WIDTH // 2, HEIGHT // 2 + 64)
+
+created_by_text = font2.render('Created by: MAHYAR', True, YELLOW)
+created_by_text_rect = created_by_text.get_rect()
+created_by_text_rect.bottomright = (WIDTH - 10, HEIGHT)
 
 # Set sound and music
 click_sound = pygame.mixer.Sound('assets/click_sound.wav')
@@ -159,6 +163,7 @@ while running:
     display_surface.blit(title_text, title_text_rect)
     display_surface.blit(score_text, score_text_rect)
     display_surface.blit(lives_text, lives_text_rect)
+    display_surface.blit(created_by_text, created_by_text_rect)
 
     # Blit assets
     display_surface.blit(clown_image, clown_image_rect)
